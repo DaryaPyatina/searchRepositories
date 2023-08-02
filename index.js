@@ -7,7 +7,7 @@ const close = document.querySelector(".close");
 const wrapperListItem = document.querySelector(".wrapper-list-item");
 
 const searchRepositories = async function (event) {
-  if (event.target.value) {
+  if (event.target.value.trim()) {
     let response = await fetch(
       `https://api.github.com/search/repositories?q=${event.target.value}&per_page=${repositories_per_page}`
     );
